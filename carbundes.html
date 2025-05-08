@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <style>
+    /* Estilos básicos para el carrito */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .carrito-container {
+      background: white;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: auto;
+    }
+    .producto {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .producto h3 {
+      margin: 0;
+    }
+    .producto p {
+      margin: 5px 0;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .vaciar-carrito {
+      background-color: #dc3545;
+    }
+    .total {
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carrito-container">
+    <h2>🛒 Tu Carrito de Compras</h2>
+    <div id="carritoProductos"></div>
+    <div class="total" id="carritoTotal">Total: €0.00</div>
+    <button class="btn vaciar-carrito" onclick="vaciarCarrito()">Vaciar Carrito</button>
+    <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+    <button class="btn" onclick="location.href='Bundesliga.html'">Volver a la tienda</button>
+  </div>
+
+  <script>
+    // Obtener carrito desde localStorage
+    function obtenerCarrito() {
+      return JSON.parse(localStorage.getItem("carrito")) || [];
+    }
+
+    // Guardar carrito en localStorage
+    function guardarCarrito(carrito) {
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+
+    // Mostrar los productos del carrito
+    function mostrarCarrito() {
+      const carrito = obtenerCarrito();
+      const contenedor = document.getElementById("carritoProductos");
+      const totalElement = document.getElementById("carritoTotal");
+
+      contenedor.innerHTML = "";
+
+      if (carrito.length === 0) {
+        contenedor.innerHTML = "<p>El carrito está vacío.</p>";
+        totalElement.innerHTML = "Total: €0.00";
+        return;
+      }
+
+      let total = 0;
+      carrito.forEach((producto, index) => {
+        total += producto.precio;
+        contenedor.innerHTML += `
+          <div class="producto">
+            <h3>${producto.nombre}</h3>
+            <p>Talla: ${producto.talla}</p>
+            <p>Precio: €${producto.precio}</p>
+            <button class="btn" onclick="eliminarProducto(${index})">Eliminar</button>
+          </div>
+        `;
+      });
+
+      totalElement.innerHTML = `Total: €${total.toFixed(2)}`;
+    }
+
+    // Eliminar producto
+    function eliminarProducto(index) {
+      const carrito = obtenerCarrito();
+      carrito.splice(index, 1);
+      guardarCarrito(carrito);
+      mostrarCarrito();
+    }
+
+    // Vaciar carrito
+    function vaciarCarrito() {
+      guardarCarrito([]);
+      mostrarCarrito();
+    }
+
+    // Finalizar compra
+    function finalizarCompra() {
+      alert("¡Gracias por tu compra!");
+      guardarCarrito([]);
+      mostrarCarrito();
+    }
+
+    // Mostrar el carrito al cargar la página
+    window.onload = mostrarCarrito;
+  </script>
+</body>
+</html>

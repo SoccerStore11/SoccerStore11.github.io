@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier League</title>
+    <link rel="stylesheet" href="Premier.css">
+    <link rel="icon" href="data:image/png;base64,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">
+     
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="Soccer.html">🏠 Inicio</a></li>
+            <li><a href="La liga.html">LaLiga</a></li>
+            <li><a href="Bundesliga.html">Bundesliga</a></li>
+            <li><a href="Serie A.html">Seria A</a></li>
+            <li><a href="Ligue one.html">Ligue 1</a></li>
+            <li><a href="Selecciones.html">Selecciones</a></li>
+            <li><a href="Retro.html">Camisetas Retros</a></li>
+            <li><a href="Contactanos.html">Contactanos</a></li>
+            <li><a href="Mision, Vision y Valores.html">🎯 Misión y Visión y Valores</a></li>
+            <li><a href="videos.html">📹 Videos</a></li>
+            <li><a href="mAPA.HTML">🗺️ Mapa de Imagen</a></li>
+        </ul>
+    </nav>
+      
+</body>
+</html>
+</head>
+<body>
+
+   
+    <header>
+        <div class="header-container">
+            <h1>Equipaciones Premier League 2024/25</h1>
+            <p>Compra las camisetas oficiales de los equipos más grandes de Inglaterra.</p>
+        </div>
+    </header>
+
+    <!-- Sección para Manchester City -->
+    <section class="team-section">
+        <div class="team-header">
+            <img class="team-logo" src="https://shop.mancity.com/on/demandware.static/Sites-MAN-Site/-/default/dw7d88010d/images/logo.svg" alt="Logo del Manchester City">
+            <h2>Manchester City</h2>
+        </div>
+        
+
+<div class="product-container">
+
+<!-- Producto 1 -->
+<div class="product-card">
+    <img class="product-image" src="https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw887b23ea/images/large/701230876001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit" alt="Camiseta de Local del City 2024/25">
+    <div class="product-info">
+      <h3>Camiseta de Local</h3>
+      <p class="price">£ 80,00</p>
+      <label for="size-select">Talla:</label>
+      <select id="size-select-camiseta-City-local">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <div class="product-buttons">
+        <button class="btn" onclick="mostrarModal(
+          'camiseta-City-local',
+          'Camiseta de Local del Manchester City 2024/25',
+          'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw887b23ea/images/large/701230876001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit',
+           80
+        )">Ver Producto</button>
+        <button class="btn" onclick="añadirAlCarrito(
+          'camiseta-City-local',
+          'Camiseta de Local del Manchester City 2024/25',
+          80,
+          document.getElementById('size-select-camiseta-City-local').value
+        )">Añadir al Carrito</button>
+        <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="product-container">
+      <!-- Producto: Camiseta de Visitante -->
+      <div class="product-card">
+        <img class="product-image" src="https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw193884ae/images/large/701230949001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit" alt="Camiseta de Visitante del Manchester City 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Visitante</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-mancity-visitante">Talla:</label>
+          <select id="size-select-mancity-visitante">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('mancity-visitante', 'Camiseta de Visitante del Manchester City 2024/25', 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw193884ae/images/large/701230949001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('mancity-visitante', 'Camiseta de Visitante del Manchester City 2024/25', 80, document.getElementById('size-select-mancity-visitante').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Producto: Camiseta de la Tercera Equipación -->
+      <div class="product-card">
+        <img class="product-image" src="https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw26cc1479/images/large/701230959001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit" alt="Camiseta de la Tercera Equipación del Manchester City 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de la Tercera Equipación</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-mancity-tercera">Talla:</label>
+          <select id="size-select-mancity-tercera">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('mancity-tercera', 'Camiseta de la Tercera Equipación del Manchester City 2024/25', 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw26cc1479/images/large/701230959001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('mancity-tercera', 'Camiseta de la Tercera Equipación del Manchester City 2024/25', 80, document.getElementById('size-select-mancity-tercera').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section class="team-section">
+    <div class="team-header">
+      <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/270px-Liverpool_FC.svg.png" alt="Logo del Liverpool">
+      <h2>Liverpool FC</h2>
+    </div>
+    <div class="product-container">
+      <!-- Producto: Camiseta de Local -->
+      <div class="product-card">
+        <img class="product-image" src="https://www.futbolemotion.com/imagesarticulos/218559/grandes/camiseta-nike-liverpool-fc-primera-equipacion-authentic-2024-2025-gym-red-white-chrome-yellow-7.webp" alt="Camiseta de Local del Liverpool 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Local</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-liverpool-local">Talla:</label>
+          <select id="size-select-liverpool-local">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('liverpool-local', 'Camiseta de Local del Liverpool 2024/25', 'https://www.futbolemotion.com/imagesarticulos/218559/grandes/camiseta-nike-liverpool-fc-primera-equipacion-authentic-2024-2025-gym-red-white-chrome-yellow-7.webp', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('liverpool-local', 'Camiseta de Local del Liverpool 2024/25', 80, document.getElementById('size-select-liverpool-local').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de Visitante -->
+      <div class="product-card">
+        <img class="product-image" src="https://www.tudnfanshop.com/cdn/shop/files/3HprD1B6_NAW.png?v=1726763256&width=1500" alt="Camiseta de Visitante del Liverpool 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Visitante</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-liverpool-visitante">Talla:</label>
+          <select id="size-select-liverpool-visitante">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('liverpool-visitante', 'Camiseta de Visitante del Liverpool 2024/25', 'https://www.tudnfanshop.com/cdn/shop/files/3HprD1B6_NAW.png?v=1726763256&width=1500', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('liverpool-visitante', 'Camiseta de Visitante del Liverpool 2024/25', 80, document.getElementById('size-select-liverpool-visitante').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de la Tercera Equipación -->
+      <div class="product-card">
+        <img class="product-image" src="https://media.foot-store.es/catalog/product/cache/image/1800x/9df78eab33525d08d6e5fb8d27136e95/n/i/nike_fq2030-101-phsfh001_082824.jpg" alt="Camiseta de la Tercera Equipación del Liverpool 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de la Tercera Equipación</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-liverpool-tercera">Talla:</label>
+          <select id="size-select-liverpool-tercera">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('liverpool-tercera', 'Camiseta de la Tercera Equipación del Liverpool 2024/25', 'https://media.foot-store.es/catalog/product/cache/image/1800x/9df78eab33525d08d6e5fb8d27136e95/n/i/nike_fq2030-101-phsfh001_082824.jpg', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('liverpool-tercera', 'Camiseta de la Tercera Equipación del Liverpool 2024/25', 80, document.getElementById('size-select-liverpool-tercera').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section class="team-section">
+    <div class="team-header">
+      <img class="team-logo" src="https://download.logo.wine/logo/Arsenal_F.C./Arsenal_F.C.-Logo.wine.png" width="300" alt="Logo del Arsenal">
+      <h2>Arsenal CF</h2>
+    </div>
+    <div class="product-container">
+      <!-- Producto: Camiseta de Local -->
+      <div class="product-card">
+        <img class="product-image" src="https://cf.soccerdealshop.cc/upload/ttmall/img/20240516/fa66a6bbbe494a6e535dffa0d5cc292a.png=z-800,800_f-webp" alt="Camiseta de Local del Arsenal 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Local</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-arsenal-local">Talla:</label>
+          <select id="size-select-arsenal-local">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('arsenal-local', 'Camiseta de Local del Arsenal 2024/25', 'https://cf.soccerdealshop.cc/upload/ttmall/img/20240516/fa66a6bbbe494a6e535dffa0d5cc292a.png=z-800,800_f-webp', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('arsenal-local', 'Camiseta de Local del Arsenal 2024/25', 80, document.getElementById('size-select-arsenal-local').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de Visitante -->
+      <div class="product-card">
+        <img class="product-image" src="https://thesoccerfactory.com/cdn/shop/files/arsenal1_4502f01b-0caf-4db0-a9cf-406e526a7edf.webp?v=1722640605&width=600" alt="Camiseta de Visitante del Arsenal 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Visitante</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-arsenal-visitante">Talla:</label>
+          <select id="size-select-arsenal-visitante">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('arsenal-visitante', 'Camiseta de Visitante del Arsenal 2024/25', 'https://thesoccerfactory.com/cdn/shop/files/arsenal1_4502f01b-0caf-4db0-a9cf-406e526a7edf.webp?v=1722640605&width=600', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('arsenal-visitante', 'Camiseta de Visitante del Arsenal 2024/25', 80, document.getElementById('size-select-arsenal-visitante').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de la Tercera Equipación -->
+      <div class="product-card">
+        <img class="product-image" src="https://thesoccerfactory.com/cdn/shop/files/arsenal1_8080de56-cc9a-4323-86c4-2a0b1b4a3389.webp?v=1723755778" alt="Camiseta de la Tercera Equipación del Arsenal 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de la Tercera Equipación</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-arsenal-tercera">Talla:</label>
+          <select id="size-select-arsenal-tercera">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('arsenal-tercera', 'Camiseta de la Tercera Equipación del Arsenal 2024/25', 'https://thesoccerfactory.com/cdn/shop/files/arsenal1_8080de56-cc9a-4323-86c4-2a0b1b4a3389.webp?v=1723755778', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('arsenal-tercera', 'Camiseta de la Tercera Equipación del Arsenal 2024/25', 80, document.getElementById('size-select-arsenal-tercera').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+
+  <section class="team-section">
+    <div class="team-header">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOzjXL-sDQxfCoNEchnEzQLDAwQxv8QHm2AQ&s" width="200" alt="">
+      <h2>Manchester United</h2>
+    </div>
+    <div class="product-container">
+      <!-- Producto: Camiseta de Local -->
+      <div class="product-card">
+        <img class="product-image" src="https://mufc-live.cdn.scayle.cloud/images/032465a23bed509d050589e6439809a2.jpg?brightness=1&width=1536&height=2048&quality=75&bg=ffffff" alt="Camiseta de Local del Manchester United 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Local</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-manutd-local">Talla:</label>
+          <select id="size-select-manutd-local">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('manutd-local', 'Camiseta de Local del Manchester United 2024/25', 'https://mufc-live.cdn.scayle.cloud/images/032465a23bed509d050589e6439809a2.jpg?brightness=1&width=1536&height=2048&quality=75&bg=ffffff', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('manutd-local', 'Camiseta de Local del Manchester United 2024/25', 80, document.getElementById('size-select-manutd-local').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de Visitante -->
+      <div class="product-card">
+        <img class="product-image" src="https://www.ultrafootball.com/cdn/shop/files/IU1390_b2b012_plp-Photoroom_1024x1024.png?v=1721921620" alt="Camiseta de Visitante del Manchester United 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Visitante</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-manutd-visitante">Talla:</label>
+          <select id="size-select-manutd-visitante">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('manutd-visitante', 'Camiseta de Visitante del Manchester United 2024/25', 'https://www.ultrafootball.com/cdn/shop/files/IU1390_b2b012_plp-Photoroom_1024x1024.png?v=1721921620', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('manutd-visitante', 'Camiseta de Visitante del Manchester United 2024/25', 80, document.getElementById('size-select-manutd-visitante').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de la Tercera Equipación -->
+      <div class="product-card">
+        <img class="product-image" src="https://kitnation.co.za/cdn/shop/files/IMG_0547_800x.jpg?v=1723971904" alt="Camiseta de la Tercera Equipación del Manchester United 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de la Tercera Equipación</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-manutd-tercera">Talla:</label>
+          <select id="size-select-manutd-tercera">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('manutd-tercera', 'Camiseta de la Tercera Equipación del Manchester United 2024/25', 'https://kitnation.co.za/cdn/shop/files/IMG_0547_800x.jpg?v=1723971904', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('manutd-tercera', 'Camiseta de la Tercera Equipación del Manchester United 2024/25', 80, document.getElementById('size-select-manutd-tercera').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="team-section">
+    <div class="team-header">
+      <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/640px-Chelsea_FC.svg.png" alt="Logo del Chelsea">
+      <h2>Chelsea FC</h2>
+    </div>
+    <div class="product-container">
+      <!-- Producto: Camiseta de Local -->
+      <div class="product-card">
+        <img class="product-image" src="https://images.footballfanatics.com/chelsea/chelsea-nike-home-stadium-shirt-2024-25_ss5_p-200851164+pv-2+u-canixtzkdetrqr6ldmyh+v-urvlapfisvffp6cea3w2.jpg?_hv=2&w=900" alt="Camiseta de Local del Chelsea 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Local</h3>
+          <p class="price">£ 75,00</p>
+          <label for="size-select-chelsea-local">Talla:</label>
+          <select id="size-select-chelsea-local">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('chelsea-local', 'Camiseta de Local del Chelsea 2024/25', 'https://images.footballfanatics.com/chelsea/chelsea-nike-home-stadium-shirt-2024-25_ss5_p-200851164+pv-2+u-canixtzkdetrqr6ldmyh+v-urvlapfisvffp6cea3w2.jpg?_hv=2&w=900', 75)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('chelsea-local', 'Camiseta de Local del Chelsea 2024/25', 75, document.getElementById('size-select-chelsea-local').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de Visitante -->
+      <div class="product-card">
+        <img class="product-image" src="https://images.footballfanatics.com/chelsea/chelsea-nike-away-stadium-shirt-2024-25_ss5_p-201095783+pv-2+u-vfx0sc8fgctpjop9net3+v-jivdoxhzhgke4obbsryt.jpg?_hv=2&w=900" alt="Camiseta de Visitante del Chelsea 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Visitante</h3>
+          <p class="price">£ 75,00</p>
+          <label for="size-select-chelsea-visitante">Talla:</label>
+          <select id="size-select-chelsea-visitante">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('chelsea-visitante', 'Camiseta de Visitante del Chelsea 2024/25', 'https://images.footballfanatics.com/chelsea/chelsea-nike-away-stadium-shirt-2024-25_ss5_p-201095783+pv-2+u-vfx0sc8fgctpjop9net3+v-jivdoxhzhgke4obbsryt.jpg?_hv=2&w=900', 75)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('chelsea-visitante', 'Camiseta de Visitante del Chelsea 2024/25', 75, document.getElementById('size-select-chelsea-visitante').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de la Tercera Equipación -->
+      <div class="product-card">
+        <img class="product-image" src="https://images.footballfanatics.com/chelsea/chelsea-nike-third-stadium-shirt-2024-25_ss5_p-201095792+pv-2+u-9pcsrtraivp8vxgua7h8+v-kvq2dpz57cld2mra1ugk.jpg?_hv=2&w=900" alt="Camiseta de la Tercera Equipación del Chelsea 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de la Tercera Equipación</h3>
+          <p class="price">£ 75,00</p>
+          <label for="size-select-chelsea-tercera">Talla:</label>
+          <select id="size-select-chelsea-tercera">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('chelsea-tercera', 'Camiseta de la Tercera Equipación del Chelsea 2024/25', 'https://images.footballfanatics.com/chelsea/chelsea-nike-third-stadium-shirt-2024-25_ss5_p-201095792+pv-2+u-9pcsrtraivp8vxgua7h8+v-kvq2dpz57cld2mra1ugk.jpg?_hv=2&w=900', 75)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('chelsea-tercera', 'Camiseta de la Tercera Equipación del Chelsea 2024/25', 75, document.getElementById('size-select-chelsea-tercera').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremeir.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section class="team-section">
+    <div class="team-header">
+        <img class="team-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2KarWIRk5X2RKk3EJEf1RCb71b7abi6acpQ&s" alt="Logo del Chelsea">
+      <h2>Aston Villa</h2>
+    </div>
+    <div class="product-container">
+      <!-- Producto: Camiseta de Local -->
+      <div class="product-card">
+        <img class="product-image" src="https://images.footballfanatics.com/aston-villa/aston-villa-adidas-home-shirt-2024-25_ss5_p-201963992+pv-2+u-3yhjwbfoyevwbj0oesbg+v-eekwlrfvbom31jryfxgr.jpg?_hv=2&w=900" alt="Camiseta de Local del Aston Villa 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Local</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-astonvilla-local">Talla:</label>
+          <select id="size-select-astonvilla-local">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('astonvilla-local', 'Camiseta de Local del Aston Villa 2024/25', 'https://images.footballfanatics.com/aston-villa/aston-villa-adidas-home-shirt-2024-25_ss5_p-201963992+pv-2+u-3yhjwbfoyevwbj0oesbg+v-eekwlrfvbom31jryfxgr.jpg?_hv=2&w=900', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('astonvilla-local', 'Camiseta de Local del Aston Villa 2024/25', 80, document.getElementById('size-select-astonvilla-local').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de Visitante -->
+      <div class="product-card">
+        <img class="product-image" src="https://images.footballfanatics.com/aston-villa/aston-villa-adidas-away-shirt-2024-25_ss5_p-202074702+pv-2+u-oltn5iskz5rrdhkj7b4v+v-fxh2kq1iodh3qufxuvys.jpg?_hv=2&w=900" alt="Camiseta de Visitante del Aston Villa 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Visitante</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-astonvilla-visitante">Talla:</label>
+          <select id="size-select-astonvilla-visitante">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('astonvilla-visitante', 'Camiseta de Visitante del Aston Villa 2024/25', 'https://images.footballfanatics.com/aston-villa/aston-villa-adidas-away-shirt-2024-25_ss5_p-202074702+pv-2+u-oltn5iskz5rrdhkj7b4v+v-fxh2kq1iodh3qufxuvys.jpg?_hv=2&w=900', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('astonvilla-visitante', 'Camiseta de Visitante del Aston Villa 2024/25', 80, document.getElementById('size-select-astonvilla-visitante').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de la Tercera Equipación -->
+      <div class="product-card">
+        <img class="product-image" src="https://images.footballfanatics.com/aston-villa/aston-villa-adidas-third-shirt-2024-25_ss5_p-202074707+pv-2+u-8vods4zruwzydziczpwa+v-qm7dmphjak5fg79tpfh0.jpg?_hv=2&w=900" alt="Camiseta de la Tercera Equipación del Aston Villa 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de la Tercera Equipación</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-astonvilla-tercera">Talla:</label>
+          <select id="size-select-astonvilla-tercera">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('astonvilla-tercera', 'Camiseta de la Tercera Equipación del Aston Villa 2024/25', 'https://images.footballfanatics.com/aston-villa/aston-villa-adidas-third-shirt-2024-25_ss5_p-202074707+pv-2+u-8vods4zruwzydziczpwa+v-qm7dmphjak5fg79tpfh0.jpg?_hv=2&w=900', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('astonvilla-tercera', 'Camiseta de la Tercera Equipación del Aston Villa 2024/25', 80, document.getElementById('size-select-astonvilla-tercera').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="team-section">
+    <div class="team-header">
+        <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/1200px-Tottenham_Hotspur.svg.png" alt="Logo del Chelsea">
+      <h2>Tottenham Hotspur</h2>
+    </div>
+    <div class="product-container">
+      <!-- Producto: Camiseta de Local -->
+      <div class="product-card">
+        <img class="product-image" src="https://cdn11.bigcommerce.com/s-5e8c3uvulz/images/stencil/900w/products/15485/31540/home-mens-kit-mens-stadium-tottenham-hotspur-home-shirt-202425__45523.1718792904.jpg?c=1" alt="Camiseta de Local del Tottenham Hotspur 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Local</h3>
+          <p class="price">£ 75,00</p>
+          <label for="size-select-tottenham-local">Talla:</label>
+          <select id="size-select-tottenham-local">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('tottenham-local', 'Camiseta de Local del Tottenham Hotspur 2024/25', 'https://cdn11.bigcommerce.com/s-5e8c3uvulz/images/stencil/900w/products/15485/31540/home-mens-kit-mens-stadium-tottenham-hotspur-home-shirt-202425__45523.1718792904.jpg?c=1', 75)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('tottenham-local', 'Camiseta de Local del Tottenham Hotspur 2024/25', 75, document.getElementById('size-select-tottenham-local').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de Visitante -->
+      <div class="product-card">
+        <img class="product-image" src="https://cdn11.bigcommerce.com/s-5e8c3uvulz/images/stencil/900w/products/19266/32190/MASS24_NK_STADIUM_SS_AWAY_SHIRT_1__92815.1719213774.jpg?c=1" alt="Camiseta de Visitante del Tottenham Hotspur 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Visitante</h3>
+          <p class="price">£ 75,00</p>
+          <label for="size-select-tottenham-visitante">Talla:</label>
+          <select id="size-select-tottenham-visitante">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('tottenham-visitante', 'Camiseta de Visitante del Tottenham Hotspur 2024/25', 'https://cdn11.bigcommerce.com/s-5e8c3uvulz/images/stencil/900w/products/19266/32190/MASS24_NK_STADIUM_SS_AWAY_SHIRT_1__92815.1719213774.jpg?c=1', 75)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('tottenham-visitante', 'Camiseta de Visitante del Tottenham Hotspur 2024/25', 75, document.getElementById('size-select-tottenham-visitante').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de la Tercera Equipación -->
+      <div class="product-card">
+        <img class="product-image" src="https://cdn11.bigcommerce.com/s-5e8c3uvulz/images/stencil/900w/products/19278/33542/MTSS24_MENS_STADIUM_SS_SHIRT_1__36015.1724705562.jpg?c=1" alt="Camiseta de la Tercera Equipación del Tottenham Hotspur 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de la Tercera Equipación</h3>
+          <p class="price">£ 75,00</p>
+          <label for="size-select-tottenham-tercera">Talla:</label>
+          <select id="size-select-tottenham-tercera">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('tottenham-tercera', 'Camiseta de la Tercera Equipación del Tottenham Hotspur 2024/25', 'https://cdn11.bigcommerce.com/s-5e8c3uvulz/images/stencil/900w/products/19278/33542/MTSS24_MENS_STADIUM_SS_SHIRT_1__36015.1724705562.jpg?c=1', 75)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('tottenham-tercera', 'Camiseta de la Tercera Equipación del Tottenham Hotspur 2024/25', 75, document.getElementById('size-select-tottenham-tercera').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="team-section">
+    <div class="team-header">
+      <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Newcastle_United_Logo.svg/800px-Newcastle_United_Logo.svg.png" width="200" alt="Logo del Newcastle">
+      <h2>Newcastle United</h2>
+    </div>
+    <div class="product-container">
+      <!-- Producto: Camiseta de Local -->
+      <div class="product-card">
+        <img class="product-image" src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e9cb6df6973d4dda8af7b5162dc0c1ae_9366/Newcastle_United_FC_24-25_Home_Jersey_Black_IX3165_HM30.jpg" alt="Camiseta de Local del Newcastle 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Local</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-newcastle-local">Talla:</label>
+          <select id="size-select-newcastle-local">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('newcastle-local', 'Camiseta de Local del Newcastle 2024/25', 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e9cb6df6973d4dda8af7b5162dc0c1ae_9366/Newcastle_United_FC_24-25_Home_Jersey_Black_IX3165_HM30.jpg', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('newcastle-local', 'Camiseta de Local del Newcastle 2024/25', 80, document.getElementById('size-select-newcastle-local').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de Visitante -->
+      <div class="product-card">
+        <img class="product-image" src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f45e3421a7fb4e63b1721f912811576b_9366/Newcastle_United_FC_24-25_Away_Jersey_Burgundy_IW0382_HM30.jpg" alt="Camiseta de Visitante del Newcastle 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Visitante</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-newcastle-visitante">Talla:</label>
+          <select id="size-select-newcastle-visitante">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('newcastle-visitante', 'Camiseta de Visitante del Newcastle 2024/25', 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f45e3421a7fb4e63b1721f912811576b_9366/Newcastle_United_FC_24-25_Away_Jersey_Burgundy_IW0382_HM30.jpg', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('newcastle-visitante', 'Camiseta de Visitante del Newcastle 2024/25', 80, document.getElementById('size-select-newcastle-visitante').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de la Tercera Equipación -->
+      <div class="product-card">
+        <img class="product-image" src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4afe8df175254fafbe6d41e420accf52_9366/Newcastle_United_FC_24-25_Third_Jersey_White_IW0390_HM30.jpg" alt="Camiseta de la Tercera Equipación del Newcastle 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de la Tercera Equipación</h3>
+          <p class="price">£ 80,00</p>
+          <label for="size-select-newcastle-tercera">Talla:</label>
+          <select id="size-select-newcastle-tercera">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('newcastle-tercera', 'Camiseta de la Tercera Equipación del Newcastle 2024/25', 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4afe8df175254fafbe6d41e420accf52_9366/Newcastle_United_FC_24-25_Third_Jersey_White_IW0390_HM30.jpg', 80)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('newcastle-tercera', 'Camiseta de la Tercera Equipación del Newcastle 2024/25', 80, document.getElementById('size-select-newcastle-tercera').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section class="team-section">
+    <div class="team-header">
+      <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/Nottingham_Forest_F.C._logo.svg/165px-Nottingham_Forest_F.C._logo.svg.png" alt="Logo del Nottingham Forest">
+      <h2>Nottingham Forest</h2>
+    </div>
+    <div class="product-container">
+      <!-- Producto: Camiseta de Local -->
+      <div class="product-card">
+        <img class="product-image" src="https://shop.nottinghamforest.co.uk/cdn/shop/files/nffc-home-shirt-2425-nottingham-forest-fc-762344_1000x.jpg?v=1730244527" alt="Camiseta de Local del Nottingham Forest 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Local</h3>
+          <p class="price">£ 45,00</p>
+          <label for="size-select-nottingham-local">Talla:</label>
+          <select id="size-select-nottingham-local">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('nottingham-local', 'Camiseta de Local del Nottingham Forest 2024/25', 'https://shop.nottinghamforest.co.uk/cdn/shop/files/nffc-home-shirt-2425-nottingham-forest-fc-762344_1000x.jpg?v=1730244527', 45)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('nottingham-local', 'Camiseta de Local del Nottingham Forest 2024/25', 45, document.getElementById('size-select-nottingham-local').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de Visitante -->
+      <div class="product-card">
+        <img class="product-image" src="https://shop.nottinghamforest.co.uk/cdn/shop/files/nffc-away-shirt-2425-nottingham-forest-fc-399809_672x.jpg?v=1730244405" alt="Camiseta de Visitante del Nottingham Forest 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de Visitante</h3>
+          <p class="price">£ 45,00</p>
+          <label for="size-select-nottingham-visitante">Talla:</label>
+          <select id="size-select-nottingham-visitante">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('nottingham-visitante', 'Camiseta de Visitante del Nottingham Forest 2024/25', 'https://shop.nottinghamforest.co.uk/cdn/shop/files/nffc-away-shirt-2425-nottingham-forest-fc-399809_672x.jpg?v=1730244405', 45)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('nottingham-visitante', 'Camiseta de Visitante del Nottingham Forest 2024/25', 45, document.getElementById('size-select-nottingham-visitante').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Producto: Camiseta de la Tercera Equipación -->
+      <div class="product-card">
+        <img class="product-image" src="https://shop.nottinghamforest.co.uk/cdn/shop/files/nffc-third-shirt-2425-nottingham-forest-fc-147188_672x.jpg?v=1730244808" alt="Camiseta de la Tercera Equipación del Nottingham Forest 2024/25">
+        <div class="product-info">
+          <h3>Camiseta de la Tercera Equipación</h3>
+          <p class="price">£ 45,00</p>
+          <label for="size-select-nottingham-tercera">Talla:</label>
+          <select id="size-select-nottingham-tercera">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <div class="product-buttons">
+            <button class="btn" onclick="mostrarModal('nottingham-tercera', 'Camiseta de la Tercera Equipación del Nottingham Forest 2024/25', 'https://shop.nottinghamforest.co.uk/cdn/shop/files/nffc-third-shirt-2425-nottingham-forest-fc-147188_672x.jpg?v=1730244808', 45)">Ver Producto</button>
+            <button class="btn" onclick="añadirAlCarrito('nottingham-tercera', 'Camiseta de la Tercera Equipación del Nottingham Forest 2024/25', 45, document.getElementById('size-select-nottingham-tercera').value)">Añadir al Carrito</button>
+            <button class="btn" onclick="window.location.href = 'carritopremier.html'">Ver Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+ 
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Sobre Nosotros</h3>
+            <p>Somos una tienda en línea dedicada a ofrecer las mejores equipaciones oficiales de fútbol de las ligas y selecciones nacionales más importantes del mundo.</p>
+        </div>          
+
+
+        <div class="footer-section">
+            <h3>Ligas</h3>
+            <ul>
+                <li><a href="index.html"> Inicio</a></li>
+                <li><a href="Premier.html">Premier League</a></li>
+                <li><a href="La liga.html">La Liga</a></li>
+                <li><a href="Serie A.html">Serie A</a></li>
+                <li><a href="Bundesliga.html">Bundesliga</a></li>
+                <li><a href="Ligue one.html">Ligue 1</a></li>
+                <li><a href="Selecciones.html">Selecciones Nacionales</a></li>
+                <li><a href="Retro.html">Camisetas Retro</a></li>
+            </ul>
+            
+        </div>
+
+        <div class="footer-section">
+            <h3>Contactanos</h3>
+            <p>Email: <a href="mailto:soccerstore1124@gmail.com">soccerstore1124@gmail.com</a></p>
+            <p>Teléfono:829-821-8781</p>
+            <a href="https://facebook.com" style="color: white; margin: 0 10px;">Facebook</a> |
+            <a href="https://twitter.com" style="color: white; margin: 0 10px;">Twitter</a> |
+            <a href="https://instagram.com" style="color: white; margin: 0 10px;">Instagram</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Soccer Store. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+
+<script>
+    let productoActual = {};
+  
+    function mostrarModal(id, titulo, imagen, precio) {
+      // Guardamos los datos actuales
+      productoActual = { id, precio };
+  
+      // Llenamos el modal
+      document.getElementById('modal-title').innerText = titulo;
+      document.getElementById('modal-image').src = imagen;
+      document.getElementById('modal-price').innerText = `Precio: ${precio}`;
+      document.getElementById('modal').style.display = 'flex';
+    }
+  
+    function cerrarModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  
+    document.getElementById('modal-add-btn').addEventListener('click', function () {
+      cerrarModal();
+    });
+  </script>
+
+
+
+<!-- Modal reutilizable -->
+<div id="modal" class="modal" style="display: none;">
+<div class="modal-content">
+  <span class="close" onclick="cerrarModal()">&times;</span>
+  <h2 id="modal-title"></h2>
+  <img id="modal-image" src="" alt="Imagen del producto" style="width: 300px;">
+  <p id="modal-price"></p>
+  <p id="modal-description"></p>
+</div>
+</div>
+
+<script>
+// Aquí van las funciones que se ejecutan cuando se hace clic en "Añadir al carrito"
+
+// Obtener carrito desde localStorage
+function obtenerCarrito() {
+  return JSON.parse(localStorage.getItem("carrito")) || [];
+}
+
+// Guardar carrito en localStorage
+function guardarCarrito(carrito) {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+// Añadir producto al carrito
+function añadirAlCarrito(id, nombre, precio, talla) {
+  const carrito = obtenerCarrito();
+  carrito.push({ id, nombre, precio, talla });
+  guardarCarrito(carrito);
+  alert(`Producto añadido: ${nombre} (Talla ${talla})`);
+}
+</script>
+</body>
+</html>
+

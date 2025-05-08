@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Store</title>
+    <link rel="icon" href="Negro y Blanco Ilustrado Mano Levantando Pesa Logo de gimnasio.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="carrusel.js"></script>
+    <link rel="stylesheet" href="Carrusel.css">
+</head>
+<body>
+
+<center>
+    <img src="Negro y Blanco Ilustrado Mano Levantando Pesa Logo de gimnasio.png" width="250" alt="Logo página">
+    <h1>Soccer Store</h1>
+    <h4>Aquí podrás encontrar las camisetas de los principales equipos de las cinco grandes ligas del fútbol europeo y <br>de las mejores selecciones nacionales del mundo</h4>
+</center>
+
+<header>
+  <div class="search-container">
+    <div id="search-results" style="text-align:center; margin-top:20px;"></div>
+    <input type="text" id="searchInput" class="search-input" placeholder="Buscar camisetas o ligas..." oninput="searchContent()">
+    <button class="search-button" onclick="searchContent()">Buscar</button>
+  </div>
+
+  <center>
+    <nav aria-label="Categorías de camisetas">
+        <ul>
+            <li><a href="La liga.html">La Liga</a></li>
+            <li><a href="Premier.html">Premier League</a></li>
+            <li><a href="Bundesliga.html">Bundesliga</a></li>
+            <li><a href="Serie A.html">Serie A</a></li>
+            <li><a href="Ligue one.html">Ligue 1</a></li>
+            <li><a href="Selecciones.html">Selecciones Nacionales</a></li>
+            <li><a href="Retro.html">Camisetas Retro</a></li>
+            <li><a href="Contactanos.html">Contactanos</a></li>
+            <li><a href="videos.html">Vídeos</a></li>
+            <li><a href="Mapa.html">Mapa de Imagen</a></li>
+            <li><a href="Mision, Vision y Valores.html">Misión, Visión y Valores</a></li>
+        </ul>
+    </nav>
+</header>
+
+<center>
+  <audio id="background-audio" autoplay loop>
+    <source src="Pitbull_-_We_Are_One_Ole_Ola_Ft_Jennifer_Lopez_Claudia_Leitte_CeeNaija.com_.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="audio-controls">
+    <button onclick="document.getElementById('background-audio').play()">Reproducir</button>
+    <button onclick="document.getElementById('background-audio').pause()">Pausar</button>
+    <button onclick="document.getElementById('background-audio').currentTime = 0">Reiniciar</button>
+  </div>
+</center>
+
+<script>
+  const audio = document.getElementById('background-audio');
+  audio.volume = 0.1; 
+</script>
+
+<div class="carousel">
+  <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+  <div class="carousel-images">
+      <img src="https://images.footballfanatics.com/barcelona/mens-nike-royal-barcelona-2024/25-home-authentic-custom-jersey_ss5_p-201545709+pv-2+u-lua8h3o9wmlkvhehm8v5+v-xt5ehwdla41giwzw94zh.jpg?_hv=2&w=900" alt="Camiseta 1">
+      <img src="https://www.futbolemotion.com/imagesarticulos/218559/grandes/camiseta-nike-liverpool-fc-primera-equipacion-authentic-2024-2025-gym-red-white-chrome-yellow-7.webp" alt="Camiseta 2">
+      <img src="https://footballcentral.co.nz/cdn/shop/files/FCBayernAdultHomeJersey2425_1000x1000.jpg?v=1718933331" alt="Camiseta 3"> 
+      <img src="https://store.juventus.com/images/juventus/products/large/JU24A01.webp" alt="Camiseta 4">
+      <img src="https://images.footballfanatics.com/paris-saint-germain/psg-nike-home-stadium-shirt-2024-25_ss5_p-200827669+pv-2+u-zsehjrrtq4aszhqrqd0f+v-gfgancmusfnavrx7ghgz.jpg?_hv=2&w=900" alt="Camiseta 5">
+      <img src="https://shop.realmadrid.com/_next/image?url=https%3A%2F%2Flegends.broadleafcloud.com%2Fapi%2Fasset%2Fcontent%2FRMCFMZ0195-01-1.jpg%3FcontextRequest%3D%257B%2522forceCatalogForFetch%2522%3Afalse%2C%2522forceFilterByCatalogIncludeInheritance%2522%3Afalse%2C%2522forceFilterByCatalogExcludeInheritance%2522%3Afalse%2C%2522applicationId%2522%3A%252201H4RD9NXMKQBQ1WVKM1181VD8%2522%2C%2522tenantId%2522%3A%2522REAL_MADRID%2522%257D&w=1200&q=50" alt="Camiseta 1">
+      <img src="https://shop.bvbcdn.de/media/image/bd/3c/b1/83912-1b73527656435_600x600@2x.jpg" alt="Camiseta 2"> 
+      <img src="https://footzilla.shop/cdn/shop/files/1_34ca363a-b0c3-4d59-b215-dabcc39de5c4.jpg?v=1721077298&width=1800" alt="Camiseta 4">
+      <img src="https://footzilla.shop/cdn/shop/files/1_210ad429-31c8-463a-9e95-22efdda23ce3.jpg?v=1728224858&width=1800" alt="Camiseta 1">
+      <img src="https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw26cc1479/images/large/701230959001_pp_01_mcfc.png?sw=1600&sh=1600&sm=fit" alt="Camiseta 2">
+      <img src="https://images.footballfanatics.com/chelsea/chelsea-nike-third-stadium-shirt-2024-25_ss5_p-201095792+pv-2+u-9pcsrtraivp8vxgua7h8+v-kvq2dpz57cld2mra1ugk.jpg?_hv=2&w=900" alt="Camiseta 4">
+      <img src="https://shop.atleticodemadrid.com/on/demandware.static/-/Sites-atm-master-catalog/default/dw5ae1f107/FQ2021-493_.jpg" alt="Camiseta 5">
+  </div>
+  <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+      <p>&copy; 2024 Soccer Store. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="Search.js"></script>
+<script src="Camisetas.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+/* Style for the image map */
+.image-map {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc; /* Optional, adds a border around the image */
+    display: block; /* Ensures the image is treated as a block element */
+    margin: 0 auto; /* Centers the image */
+}
+
+/* General style for all areas in the map */
+.map-area {
+    outline: none; /* Removes the default focus outline */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Hover Effects for Areas */
+.map-area:hover {
+    opacity: 0.7; /* Makes the area semi-transparent on hover */
+    border: 2px solid #ff5722; /* Adds a border on hover */
+}
+
+/* Specific Map Area Styles (Optional: Adding specific styles for each area) */
+
+/* For Mapa1 (La liga) */
+.map1:hover {
+    background-color: rgba(255, 87, 34, 0.3); /* Orange semi-transparent background */
+}
+
+/* For Mapa2 (Ligue 1) */
+.map2:hover {
+    background-color: rgba(33, 150, 243, 0.3); /* Blue semi-transparent background */
+}
+
+/* For Mapa3 (Bundesliga) */
+.map3:hover {
+    background-color: rgba(76, 175, 80, 0.3); /* Green semi-transparent background */
+}
+
+/* For Mapa4 (Premier League) */
+.map4:hover {
+    background-color: rgba(255, 193, 7, 0.3); /* Yellow semi-transparent background */
+}
+
+/* For Mapa5 (Serie A) */
+.map5:hover {
+    background-color: rgba(233, 30, 99, 0.3); /* Pink semi-transparent background */
+}
+
+/* Media Query to ensure image map is responsive */
+@media (max-width: 768px) {
+    .image-map {
+        width: 100%;
+    }
+}

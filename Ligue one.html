@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League 1</title>
+    <link rel="Icon" href="data:image/png;base64,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">
+    <link rel="stylesheet" href="Ligue one.css">
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">🏠 Inicio</a></li>
+            <li><a href="La liga.html">LaLiga</a></li>
+            <li><a href="Premier.html">Premier League</a></li>
+            <li><a href="Bundesliga.html">Bundesliga</a></li>
+            <li><a href="Serie A.html">Seria A</a></li>
+            <li><a href="Selecciones.html">Selecciones</a></li>
+            <li><a href="Retro.html">Camisetas Retros</a></li>
+            <li><a href="Contactanos.html">Contactanos</a></li>
+            <li><a href="Mision, Vision y Valores.html">🎯 Misión y Visión y Valores</a></li>
+            <li><a href="videos.html">📹 Videos</a></li>
+            <li><a href="mAPA.HTML">🗺️ Mapa de Imagen</a></li>
+        </ul>
+    </nav>
+
+
+</body>
+</html>
+
+
+
+
+<header>
+    <div class="header-container">
+        <h1>Equipaciones Ligue One 2024/25</h1>
+        <p>Compra las camisetas oficiales de los equipos más grandes de Francia.</p>
+    </div>
+
+</header>
+
+
+
+<!-- Sección para PSG-->
+<section class="team-section">
+    <div class="team-header">
+        <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/422px-Paris_Saint-Germain_F.C..svg.png?20181110201140" alt="Logo del PSG">
+        <h2>Paris Saint-Germain</h2>
+    </div>
+    
+    <div class="product-container">
+        <!-- Producto 1 -->
+        <div class="product">
+            <img class="product-image" src="https://images.footballfanatics.com/paris-saint-germain/psg-nike-home-stadium-shirt-2024-25_ss5_p-200827669+pv-2+u-zsehjrrtq4aszhqrqd0f+v-gfgancmusfnavrx7ghgz.jpg?_hv=2&w=900" alt="Camiseta de Local del PSG 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de Local</h3>
+                <p class="price">€ 90.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product">
+            <img class="product-image" src="https://images.footballfanatics.com/paris-saint-germain/psg-nike-away-stadium-shirt-2024-2025_ss5_p-201545412+pv-2+u-pimzpspwmmfzlvtbk2wh+v-jxc3sg7kkrnxdqfcpokx.jpg?_hv=2&w=900" alt="Camiseta de Visitante del PSG 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de Visitante</h3>
+                <p class="price">€ 90.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product">
+            <img class="product-image" src="https://images.footballfanatics.com/paris-saint-germain/psg-jordan-third-stadium-shirt-2024-25_ss5_p-201545418+pv-2+u-mnpaaisypi39z35fy3oy+v-i4fxi47jurbqeogppazg.jpg?_hv=2&w=900" alt="Camiseta de la Tercera Equipación del PSG 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de la Tercera Equipación</h3>
+                <p class="price">€ 90.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Sección para Marsella-->
+<section class="team-section">
+    <div class="team-header">
+        <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Olympique_Marseille_logo.svg/800px-Olympique_Marseille_logo.svg.png" alt="Logo del Marsella">
+        <h2>Olympique de Marsella</h2>
+    </div>
+    
+    <div class="product-container">
+        <!-- Producto 1 -->
+        <div class="product">
+            <img class="product-image" src="https://boutique.om.fr/media/catalog/product/cache/559a0c2b66077761cf75542946381af7/m/a/maillot-om-domicile-24-25-homme-0_4.jpg" alt="Camiseta de Local del Marsella 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de Local</h3>
+                <p class="price">€ 95.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product">
+            <img class="product-image" src="https://boutique.om.fr/media/catalog/product/cache/559a0c2b66077761cf75542946381af7/m/a/maillot-om-exterieur-24-25-homme-0_8.jpg" alt="Camiseta de Visitante del Marsella 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de Visitante</h3>
+                <p class="price">€ 95.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product">
+            <img class="product-image" src="https://boutique.om.fr/media/catalog/product/cache/559a0c2b66077761cf75542946381af7/m/a/maillot-om-third-24-25-homme-0_6.jpg" alt="Camiseta de la Tercera Equipación del Marsella2024/25">
+            <div class="product-info">
+                <h3>Camiseta de la Tercera Equipación</h3>
+                <p class="price">€ 95.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+ <!-- Sección para Marsella-->
+<section class="team-section">
+    <div class="team-header">
+        <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Olympique_Lyonnais_logo.svg/800px-Olympique_Lyonnais_logo.svg.png" alt="Logo del Lyon">
+        <h2>Olympique de Lyon</h2>
+    </div>
+    
+    <div class="product-container">
+        <!-- Producto 1 -->
+        <div class="product">
+            <img class="product-image" src="https://olbtqtwiccdn.ol.fr/39711-zoom_default/24-25-men-s-home-jersey.jpg" alt="Camiseta de Local del Lyon 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de Local</h3>
+                <p class="price">€ 100.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product">
+            <img class="product-image" src="https://olbtqtwiccdn.ol.fr/40352-zoom_default/24-25-men-s-away-jersey.jpg" alt="Camiseta de Visitante del Lyon 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de Visitante</h3>
+                <p class="price">€ 100.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product">
+            <img class="product-image" src="https://olbtqtwiccdn.ol.fr/40768-zoom_default/24-25-men-s-third-jersey.jpg" alt="Camiseta de la Tercera Equipación del Lyon 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de la Tercera Equipación</h3>
+                <p class="price">€ 100.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- Sección para Monaco-->
+<section class="team-section">
+    <div class="team-header">
+        <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/LogoASMonacoFC2021.svg/800px-LogoASMonacoFC2021.svg.png" alt="Logo del Monaco">
+        <h2>Monaco Fc</h2>
+    </div>
+    
+    <div class="product-container">
+        <!-- Producto 1 -->
+        <div class="product">
+            <img class="product-image" src="https://shop.asmonaco.com/cdn/shop/files/351P33W_A13_1APM_1800x1800.jpg?v=1720074917" alt="Camiseta de Local del Monaco 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de Local</h3>
+                <p class="price">€ 85.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product">
+            <img class="product-image" src="https://shop.asmonaco.com/cdn/shop/files/351P34W_A01_1APM_996dcaf9-8f7f-4bc2-a10b-4de33a8e06be_1800x1800.jpg?v=1721375207" alt="Camiseta de Visitante del Monaco 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de Visitante</h3>
+                <p class="price">€ 85.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product">
+            <img class="product-image" src="https://shop.asmonaco.com/en/cdn/shop/files/351N3XW_A03_APM_1800x1800.jpg?v=1723101467" alt="Camiseta de la Tercera Equipación del Monaco 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de la Tercera Equipación</h3>
+                <p class="price">€ 85.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Sección para Lille-->
+<section class="team-section">
+    <div class="team-header">
+        <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/Lille_OSC_2018_logo.svg/800px-Lille_OSC_2018_logo.svg.png" alt="Logo del Lillle">
+        <h2>Olympique Lille</h2>
+    </div>
+    
+    <div class="product-container">
+        <!-- Producto 1 -->
+        <div class="product">
+            <img class="product-image" src="https://www.boutique-losc.fr/assets/uploads/images/products/max/3361-2z80.webp" alt="Camiseta de Local del Lille 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de Local</h3>
+                <p class="price">€ 90.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product">
+            <img class="product-image" src="https://www.boutique-losc.fr/assets/uploads/images/products/max/3375-DXF0.webp" alt="Camiseta de Visitante del Lille 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de Visitante</h3>
+                <p class="price">€ 90.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product">
+            <img class="product-image" src="https://www.boutique-losc.fr/assets/uploads/images/products/max/3383-wWd0.webp" alt="Camiseta de la Tercera Equipación del Lille 2024/25">
+            <div class="product-info">
+                <h3>Camiseta de la Tercera Equipación</h3>
+                <p class="price">€ 90.00</p>
+                <p class="sizes">Tallas: S, M, L, XL, XXL</p>
+                <button class="btn">Ver Producto</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Sobre Nosotros</h3>
+            <p>Somos una tienda en línea dedicada a ofrecer las mejores equipaciones oficiales de fútbol de las ligas y selecciones nacionales más importantes del mundo.</p>
+        </div>          
+
+
+        <div class="footer-section">
+            <h3>Ligas</h3>
+            <ul>
+                <li><a href="index.html"> Inicio</a></li>
+                <li><a href="Premier.html">Premier League</a></li>
+                <li><a href="La liga.html">La Liga</a></li>
+                <li><a href="Serie A.html">Serie A</a></li>
+                <li><a href="Bundesliga.html">Bundesliga</a></li>
+                <li><a href="Ligue one.html">Ligue 1</a></li>
+                <li><a href="Selecciones.html">Selecciones</a></li>
+                <li><a href="Retro.html">Camisetas Retro</a></li>
+            </ul>
+            
+        </div>
+
+        <div class="footer-section">
+            <h3>Contactanos</h3>
+            <p>Email: <a href="mailto:soccerstore1124@gmail.com">soccerstore1124@gmail.com</a></p>
+            <p>Teléfono:829-821-8781</p>
+            <a href="https://facebook.com" style="color: white; margin: 0 10px;">Facebook</a> |
+            <a href="https://twitter.com" style="color: white; margin: 0 10px;">Twitter</a> |
+            <a href="https://instagram.com" style="color: white; margin: 0 10px;">Instagram</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Soccer Store. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+         
+
+                    
